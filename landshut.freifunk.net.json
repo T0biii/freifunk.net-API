@@ -13,7 +13,7 @@
             "vpnaccess": "automatic"
         },
         "legals": [
-            "vpnnationals",
+            "vpnnational",
             "institutions"
         ],
         "routing": [
@@ -61,7 +61,7 @@
         {
             "url": "https://map.tecff.de/",
             "interval": "1 minute",
-            "technicalType": "ffmap",
+            "technicalType": "hopglass",
             "mapType": "geographical"
         },
         {
