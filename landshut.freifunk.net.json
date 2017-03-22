@@ -7,7 +7,7 @@
             "autoupdate"
         ],
         "firmware": {
-            "url": "http://freifunk-altdorf.de/mitmachen/1.-firmware-herunterladen.php",
+            "url": "http://fw1.tecff.de",
             "docs": "https://github.com/tecff",
             "name": "gluon",
             "vpnaccess": "automatic"
@@ -41,8 +41,8 @@
         "phone": "+4987120540155"
     },
     "state": {
-        "lastchange": "2016-08-30T21:15:32.731181",
-        "nodes": 304,
+        "lastchange": "2017-03-22T13:15:32.731181",
+        "nodes": 404,
         "focus": [
             "infrastructure/backbone",
             "Public Free Wifi",
