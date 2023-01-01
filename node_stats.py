@@ -18,7 +18,7 @@ if __name__ == '__main__':
         online = 0
         nonclient = 0
 
-        for node in nodes['nodes'].values():
+        for node in nodes['nodes']:
             if node['flags']['online']:
                 online += 1
                 if node['flags']['gateway']:
