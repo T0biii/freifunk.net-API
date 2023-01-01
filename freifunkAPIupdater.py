@@ -5,7 +5,7 @@ from json import dumps
 import re
 from datetime import datetime
 
-jsonfiles = [ 'altdorf.freifunk.net.json', 'landshut.freifunk.net.json' ]
+jsonfiles = [ 'altdorf.freifunk.net.json' ]
 for index, jsonfile in enumerate(jsonfiles):
   print(jsonfile)
   json_data = open(jsonfile)
