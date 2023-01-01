@@ -41,8 +41,8 @@
         "phone": "+4987120540155"
     },
     "state": {
-        "lastchange": "2019-12-21T23:04:00.000000",
-        "nodes": 650,
+        "lastchange": "2023-01-01T20:03:25.255245",
+        "nodes": 654,
         "focus": [
             "infrastructure/backbone",
             "Public Free Wifi",
