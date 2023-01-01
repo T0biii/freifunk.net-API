@@ -7,7 +7,7 @@ from datetime import datetime
 
 jsonfiles = [ 'altdorf.freifunk.net.json', 'landshut.freifunk.net.json' ]
 for index, jsonfile in enumerate(jsonfiles):
-  print jsonfile
+  print(jsonfile)
   json_data = open(jsonfile)
   data = json.load(json_data)
   json_data.close()
@@ -21,8 +21,8 @@ for index, jsonfile in enumerate(jsonfiles):
 
   data["state"]["lastchange"] = datetime.now().isoformat('T')
   data["state"]["nodes"] = int(nodes)
-  print data["state"]["lastchange"]
-  print data["state"]["nodes"]
+  print(data["state"]["lastchange"])
+  print(data["state"]["nodes"])
 
   try:
     with open(jsonfile, 'w') as fn:
