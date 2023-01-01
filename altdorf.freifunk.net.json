@@ -67,7 +67,7 @@
             "mapType": "geographical"
         },
         {
-            "url": "https://data.tecff.de/nodelist.json",
+            "url": "https://map.tecff.de/yanic/nodelist.json",
             "interval": "1 minute",
             "technicalType": "nodelist"
         }

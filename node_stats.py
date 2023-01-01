@@ -2,7 +2,7 @@
 from datetime import datetime
 from requests import get as rget
 
-NODESJSON = 'https://data.tecff.de/nodes.json'
+NODESJSON = 'https://map.tecff.de/yanic/nodes.json'
 
 def scrape(url):
     '''returns remote json'''
