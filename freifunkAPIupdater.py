@@ -1,33 +1,38 @@
 #!/usr/bin/env python
-
+import sys
 import json
-from json import dumps
-import re
 from datetime import datetime
 
-jsonfiles = [ 'altdorf.freifunk.net.json' ]
-for index, jsonfile in enumerate(jsonfiles):
-  print(jsonfile)
-  json_data = open(jsonfile)
-  data = json.load(json_data)
-  json_data.close()
 
-  try:
-    with open('node_stats', 'r') as fn:
-      numbers = re.findall(r'\d+', fn.readline())
-      nodes = numbers[2]
-  except Exception as ex:
-    exit(ex)
+file_path = "cities_to_nodes_urls.json"
 
-  data["state"]["lastchange"] = datetime.now().isoformat('T')
-  data["state"]["nodes"] = int(nodes)
-  print(data["state"]["lastchange"])
-  print(data["state"]["nodes"])
+# Das Dictionary aus der JSON-Datei laden
+with open(file_path, "r") as file:
+    cities_to_urls = json.load(file)
 
-  try:
-    with open(jsonfile, 'w') as fn:
-      fn.write(dumps(data, indent=4))
-      fn.close()
-  except Exception as ex:
-    exit(ex)
+for city, url in cities_to_urls.items():
+    #Load API json
+    filenamecity = f"{city}.json"
+    with open(filenamecity, encoding="utf8") as json_data:
+        data = json.load(json_data)
+        json_data.close()
 
+    #Load Results json for Update
+    filename_result = f"{city}-results.json"
+    with open(filename_result, encoding="utf8") as json_resultdata:
+        updatedata = json.load(json_resultdata)
+        json_resultdata.close()
+    
+    nodes = updatedata["online_nodes"]
+
+    data["state"]["lastchange"] = datetime.now().astimezone().replace(microsecond=0).isoformat()
+    data["state"]["nodes"] = int(nodes)
+    print(city)
+    print(data["state"]["lastchange"])
+    print(data["state"]["nodes"])
+    try:
+        with open(filenamecity, 'w', encoding="utf8") as fn:
+            json.dump(data, fn, indent=4, ensure_ascii=False)
+            fn.close()
+    except OSError as ex:
+        sys.exit(ex)
